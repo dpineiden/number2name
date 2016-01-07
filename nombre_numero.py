@@ -24,6 +24,18 @@ class Nombre_Numero:
         self.Nom_levels = {}
         self.Nom_value_level={}
         self.Name_Total = ''
+        self.get_names()
+        
+    def get_names(self):
+        self.getLevels()
+        self.getNum_by_level()
+        self.getLevelNames()
+        self.getValuesName()
+        self.numero
+        self.N_dicc
+        self.Nom_levels
+        self.Nom_value_level
+        self.getName_Total()   
 
     def getLevels(self):
         self.str_nr = str(self.numero)
