@@ -1,5 +1,15 @@
 from setuptools import find_packages, setup
 
+def get_readme():
+    readme = ''
+    try:
+        import pypandoc
+        readme = pypandoc.convert('README.md', 'rst')
+    except (ImportError, IOError):
+        with open('README.md', 'r') as file_data:
+            readme = file_data.read()
+    return readme
+
 setup(
         name='number2name_es',
 	    version='1.0.0',
@@ -22,12 +32,3 @@ setup(
 )
 
 
-def get_readme():
-    readme = ''
-    try:
-        import pypandoc
-        readme = pypandoc.convert('README.md', 'rst')
-    except (ImportError, IOError):
-        with open('README.md', 'r') as file_data:
-            readme = file_data.read()
-    return readme
